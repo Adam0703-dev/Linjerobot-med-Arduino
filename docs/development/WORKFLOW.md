@@ -2,7 +2,7 @@
 
 ## Scope
 
-Version 1 is an archive. Version 2 is the current development baseline. A future Version 3 should be created only when its goal requires a deliberate architectural break rather than an incremental Version 2 improvement.
+Version 1 is historical documentation. The firmware in `firmware/` is the current Version 2 development baseline. A future Version 3 should be created only when its goal requires a deliberate architectural break rather than an incremental Version 2 improvement.
 
 ## Day-to-day workflow
 
@@ -22,7 +22,6 @@ Version 1 is an archive. Version 2 is the current development baseline. A future
 
 ## Version policy
 
-- Keep compatible improvements in `versions/v2`.
+- Keep compatible improvements in `firmware/`.
 - Tag a stable, tested state as `v2.x`.
-- Start `versions/v3` only for a redesign with its own documented goal and migration notes.
-
+- Start a `v3-development` branch only for a redesign with its own documented goal and migration notes. Merge it into `main` when it is ready and tag the result as `v3.0.0`.

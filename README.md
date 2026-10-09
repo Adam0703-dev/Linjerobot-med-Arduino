@@ -4,7 +4,7 @@ An Arduino Uno robot-car project that combines line following, obstacle avoidanc
 
 ## Project status
 
-This repository is private and intended as an engineering portfolio project. Version 1 is retained as historical documentation; new work should start from the Version 2 firmware.
+This repository is private and intended as an engineering portfolio project. Version 1 is retained as historical documentation. The firmware in `firmware/` is the current Version 2 development baseline.
 
 ## Demonstrated Version 2 behavior
 
@@ -19,12 +19,10 @@ The original project poster and firmware are retained in this repository as sour
 ## Repository map
 
 ```text
-versions/
-  v1/                 Version 1 archive and high-school thesis
-  v2/                 Active baseline
-    firmware/         Arduino sketch
-    docs/             Version 2 poster
+firmware/             Current Arduino firmware (Version 2 baseline)
 docs/
+  version-1/          Version 1 thesis and historical context
+  version-2/          Version 2 poster and historical context
   development/        Workflow and future-development notes
   source-material/    Original source document for the Version 2 sketch
 hardware/             Hardware notes and wiring documentation
@@ -43,7 +41,7 @@ Pin assignments and control parameters are documented directly in the Version 2 
 
 ## Getting started
 
-1. Open `versions/v2/firmware/LinjerobotV2/LinjerobotV2.ino` in the Arduino IDE.
+1. Open `firmware/LinjerobotV2/LinjerobotV2.ino` in the Arduino IDE.
 2. Inspect the pin assignments and motor direction before uploading.
 3. Start with the checks in `tests/README.md`.
 4. Record outcomes before changing constants or behavior.
@@ -53,3 +51,13 @@ Pin assignments and control parameters are documented directly in the Version 2 
 
 Before making this repository public, review the archived report and poster for personal information such as names, email addresses, school branding, and photographs. Keep a private source archive and publish a redacted portfolio version if needed.
 
+## How versions work here
+
+Folders preserve the supplied historical material; Git preserves the development story from now on.
+
+- `main` contains the latest working version of the robot.
+- A **commit** is one small, named change, such as a sensor-calibration adjustment.
+- A **branch** is a safe workspace for a change before it reaches `main`.
+- A **tag** marks a stable milestone, for example `v2.1.0` after testing or `v3.0.0` for a substantial redesign.
+
+The repository's Git history begins with the import because the original Version 1 source code was not supplied. The Version 1 report remains available as historical documentation rather than being presented as code history that we cannot verify.
