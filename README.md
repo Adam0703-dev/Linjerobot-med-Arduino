@@ -21,7 +21,7 @@ The original project poster and firmware are retained in this repository as sour
 ```text
 firmware/             Current Arduino firmware (Version 2 baseline)
 docs/
-  version-1/          Version 1 thesis and historical context
+  version-1/          Version 1 thesis and original prototype sketch
   version-2/          Version 2 poster and historical context
   development/        Workflow and future-development notes
   source-material/    Original source document for the Version 2 sketch
@@ -60,4 +60,4 @@ Folders preserve the supplied historical material; Git preserves the development
 - A **branch** is a safe workspace for a change before it reaches `main`.
 - A **tag** marks a stable milestone, for example `v2.1.0` after testing or `v3.0.0` for a substantial redesign.
 
-The repository's Git history begins with the import because the original Version 1 source code was not supplied. The Version 1 report remains available as historical documentation rather than being presented as code history that we cannot verify.
+The repository's Git history begins with this import. The original Version 1 sketch is preserved in `docs/version-1/firmware/`; the active Version 2 code is in `firmware/`. The historical source files are kept unchanged, while improvements happen only in the active firmware.
