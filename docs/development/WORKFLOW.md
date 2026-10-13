@@ -1,27 +1,33 @@
 # Development workflow
 
-## Scope
+The robot combines hardware and software changes, so each change should include a short note about what was tested on the physical robot.
 
-Version 1 is historical documentation. The firmware in `firmware/` is the current Version 2 development baseline. A future Version 3 should be created only when its goal requires a deliberate architectural break rather than an incremental Version 2 improvement.
+## Branches
 
-## Day-to-day workflow
+- `main` holds the current project baseline.
+- `develop` is where completed changes are combined and checked together.
+- Short-lived branches are created from `develop` for one change and merged back through a pull request.
 
-1. Create an issue describing the behavior to improve and how success will be measured.
-2. Create a branch named after the change, for example `feature/sensor-calibration` or `fix/wall-following-turn`.
-3. Make the smallest focused firmware or hardware-documentation change.
-4. Run the relevant tests from `tests/README.md` and write a session log.
-5. Open a pull request that states the test result, hardware configuration, and any known limitation.
-6. Merge only after the behavior is repeatable.
+Use a short name that describes the work:
 
-## Suggested next milestones
+- `feature/ir-calibration` for a new capability or improvement;
+- `fix/wall-following` for a correction; and
+- `docs/wiring-guide` for documentation.
 
-1. Establish a documented Version 2 baseline on the current physical robot.
-2. Calibrate IR thresholds and ultrasonic distance behavior for the current track and environment.
-3. Separate sensor reading, movement control, and state transitions into smaller modules if the sketch becomes difficult to change safely.
-4. Add a wiring diagram, parts list, photographs, and a short demonstration video for the portfolio version.
+Branches represent work in progress, not permanent robot versions. Version 1 and Version 2 are recorded in the project files and Git history. When a tested state is ready to mark as a release, create a tag such as `v2.0.0`.
 
-## Version policy
+## A typical change
 
-- Keep compatible improvements in `firmware/`.
-- Tag a stable, tested state as `v2.x`.
-- Start a `v3-development` branch only for a redesign with its own documented goal and migration notes. Merge it into `main` when it is ready and tag the result as `v3.0.0`.
+1. Describe the goal and a way to tell whether it worked. Use a GitHub issue for work that needs tracking or discussion.
+2. Create a short-lived branch from `develop`.
+3. Make one focused change.
+4. Test the relevant behavior on the robot and add the result to `tests/`.
+5. Open a pull request into `develop`. Include the reason for the change, what was tested, and what happened.
+6. After related changes work together, open a pull request from `develop` to `main` to update the project baseline.
+
+## Development milestones
+
+1. Run and document the Version 2 baseline test plan.
+2. Calibrate IR sensors and ultrasonic distance readings for the actual robot and course.
+3. Add a checked wiring diagram and a parts list.
+4. Consider a Version 3 redesign only when a specific goal calls for a larger architectural change.

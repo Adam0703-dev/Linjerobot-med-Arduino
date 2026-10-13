@@ -17,7 +17,7 @@ Use this folder for repeatable checks of the active Version 2 firmware. Do not t
 
 ## Test-log template
 
-Create one Markdown file per test session, for example `2026-10-09-baseline.md`.
+Create one Markdown file per test session, for example `YYYY-MM-DD-baseline.md`.
 
 ```markdown
 # Baseline test - YYYY-MM-DD
@@ -33,4 +33,3 @@ Create one Markdown file per test session, for example `2026-10-09-baseline.md`.
 | --- | --- | --- | --- |
 | T01 | | | |
 ```
-
