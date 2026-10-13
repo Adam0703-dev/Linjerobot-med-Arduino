@@ -47,10 +47,6 @@ Pin assignments and control parameters are documented directly in the Version 2 
 4. Record outcomes before changing constants or behavior.
 5. Use a branch for each improvement and merge only after the relevant tests pass.
 
-## Portfolio note
-
-Before making this repository public, review the archived report and poster for personal information such as names, email addresses, school branding, and photographs. Keep a private source archive and publish a redacted portfolio version if needed.
-
 ## How versions work here
 
 Folders preserve the supplied historical material; Git preserves the development story from now on.
