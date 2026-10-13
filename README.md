@@ -1,59 +1,61 @@
 # Arduino Line-Following Robot
 
-An Arduino Uno robot-car project that combines line following, obstacle avoidance, wall following, and free navigation. The active development baseline is Version 2, originally prepared for Unga Forskare.
+This project follows the robot from its first obstacle-avoiding prototype to a line-following robot developed for Unga Forskare. Version 2 uses an Arduino Uno, three infrared sensors, and three ultrasonic sensors to follow a line, avoid obstacles, and navigate when the line is no longer detected.
 
-## Project status
+The repository keeps the original Version 1 sketch and project documents alongside the Version 2 firmware, so the design can be studied and improved over time.
 
-This repository is private and intended as an engineering portfolio project. Version 1 is retained as historical documentation. The firmware in `firmware/` is the current Version 2 development baseline.
+## What it does
 
-## Demonstrated Version 2 behavior
+The Version 2 sketch is organized as a state machine. It can:
 
-- Follows a black line using three infrared sensors.
-- Detects obstacles with three ultrasonic sensors.
-- Chooses a side and follows a wall while bypassing an obstacle.
-- Falls back to free navigation when the line is lost.
-- Stops permanently when all three IR sensors detect the goal marker.
+- follow a black line using three IR sensors;
+- detect an obstacle ahead and choose a side to pass it;
+- follow a nearby wall while moving around an obstacle;
+- switch to free navigation when the line disappears; and
+- stop when all three IR sensors detect the goal marker.
 
-The original project poster and firmware are retained in this repository as source material. The code has not yet been revalidated on the current hardware after import.
+These behaviors are described in the competition poster and implemented in the supplied sketch. The test plan lists expected behavior; it does not claim that every scenario has been re-tested on the current robot.
 
-## Repository map
+## Hardware
 
-```text
-firmware/             Current Arduino firmware (Version 2 baseline)
-docs/
-  version-1/          Version 1 thesis and original prototype sketch
-  version-2/          Version 2 poster and historical context
-  development/        Workflow and future-development notes
-  source-material/    Original source document for the Version 2 sketch
-hardware/             Hardware notes and wiring documentation
-tests/                Repeatable test plans and result logs
-```
-
-## Hardware represented by Version 2
+The Version 2 materials identify:
 
 - Arduino Uno
-- Two DC motors
-- L298N motor driver
-- Three IR sensors
-- Three ultrasonic sensors
+- two DC motors and a motor driver
+- three IR sensors
+- three ultrasonic sensors
 
-Pin assignments and control parameters are documented directly in the Version 2 sketch. Confirm the wiring against the physical robot before powering it.
+Pin assignments and control values are in the [Version 2 sketch](firmware/LinjerobotV2/LinjerobotV2.ino). Check the wiring and motor directions on the robot before uploading changes.
+
+## Versions
+
+- **Version 1** is preserved with its original sketch and high-school thesis in [`docs/version-1/`](docs/version-1/).
+- **Version 2** is the line-following and obstacle-avoiding design. Its active firmware is in [`firmware/LinjerobotV2/`](firmware/LinjerobotV2/), and its poster is in [`docs/version-2/`](docs/version-2/).
+
+Version 1's sketch is kept as historical source. New improvements belong in the active firmware.
 
 ## Getting started
 
-1. Open `firmware/LinjerobotV2/LinjerobotV2.ino` in the Arduino IDE.
-2. Inspect the pin assignments and motor direction before uploading.
-3. Start with the checks in `tests/README.md`.
-4. Record outcomes before changing constants or behavior.
-5. Use a branch for each improvement and merge only after the relevant tests pass.
+1. Install the Arduino IDE.
+2. Open `firmware/LinjerobotV2/LinjerobotV2.ino`.
+3. Select Arduino Uno as the board and check that the pin definitions match the robot.
+4. Upload and test in a clear area, with the robot raised or otherwise secured for initial motor checks.
+5. Record results using the test plan in [`tests/README.md`](tests/README.md).
 
-## How versions work here
+The firmware was imported from the supplied Version 2 code. A fresh hardware test should be recorded before treating the current behavior as a verified baseline.
 
-Folders preserve the supplied historical material; Git preserves the development story from now on.
+## Project layout
 
-- `main` contains the latest working version of the robot.
-- A **commit** is one small, named change, such as a sensor-calibration adjustment.
-- A **branch** is a safe workspace for a change before it reaches `main`.
-- A **tag** marks a stable milestone, for example `v2.1.0` after testing or `v3.0.0` for a substantial redesign.
+```text
+firmware/LinjerobotV2/   Active Arduino sketch
+docs/version-1/          Version 1 sketch and thesis
+docs/version-2/          Version 2 poster and notes
+docs/development/        Development and branch workflow
+docs/source-material/    Original Version 2 code document
+hardware/                Hardware notes and wiring information
+tests/                   Test plan and test-session records
+```
 
-The repository's Git history begins with this import. The original Version 1 sketch is preserved in `docs/version-1/firmware/`; the active Version 2 code is in `firmware/`. The historical source files are kept unchanged, while improvements happen only in the active firmware.
+## Contributing
+
+Small, focused changes make it easier to understand how each adjustment affects the robot. For a change, create a branch such as `feature/ir-calibration`, test it on the robot, record what happened, and open a pull request with the change and test result. See [the development workflow](docs/development/WORKFLOW.md).
