@@ -55,4 +55,4 @@ The schematic is included in this directory and should be used as the primary re
 It documents how the Arduino, sensors, motor driver, motors, and power supply are connected.
 
 
-[View the schematics here:](./Linerobot-V2-Schematics.Ink)
+[View the schematics here:](./Linerobot-V2-Schematics.pdf)
