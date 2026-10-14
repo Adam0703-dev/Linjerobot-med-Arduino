@@ -15,7 +15,7 @@ The initial version of the robot, developed as part of my upper-secondary school
 
 - Focus: Initial robot design and implementation.
 - Documentation: Original thesis report and modell picture.
-- [View Version 1](./docs/Version-1/)
+- [View Version 1](./docs/version-1/)
 
 ### Version 2 – Competition Version
 
@@ -23,7 +23,7 @@ The version developed for the Unga Forskare competition. This version serves as 
 
 - Focus: Robot behavior, control logic, and obstacle avoidance.
 - Documentation: Final competition code, modell picture, flowchart and schematics.
-- [View Version 2](./docs/Version-2/)
+- [View Version 2](./docs/version-2/)
 
 ## Hardware
 
